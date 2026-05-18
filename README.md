@@ -1,5 +1,5 @@
 # ~ cerabellum ~
-[image of software](https://file.garden/aGHX-XiW5xIQj3Jo/image_2026-05-18_182403082.png)
+![image of software](https://file.garden/aGHX-XiW5xIQj3Jo/image_2026-05-18_182403082.png)
 
 > *named after my beautiful wife c.c. from code geass.. does what lucien does but for code. (you would get this reference if you play blood†stained symphony wink wink.*
 
