@@ -52,7 +52,7 @@ full notation reference in `CERA_SCRIPT_REFERENCE.txt`.
 requires python 3.10+ and pyyaml.
 
 ```bash
-git clone https://github.com/lobstertrilogy/cerabellum
+git clone https://github.com/Lobster-Trilogy/cerabellum
 cd cerabellum
 pip install -r requirements.txt
 python main.py
