@@ -1,0 +1,602 @@
+# Act 1
+
+\\ note: ~Important notes: Side images automatically hide when their characters dialogue is not on screen.~
+\\ ~ act 1 · standard deviation ~
+\\ scene: classroom_afternoon
+\\ music: school_casual
+\\ nvl
+The warm afternoon light spread itself through the classroom.
+The small squeaks from a whiteboard marker softly filled the air.
+Pages turns and pens quitely drag across the pages one after the other.
+On the far end of the classroom, one student eyes remains fixed on the window.
+\\ cg: cg01_act01_lelouch_window_1
+His head held softly in his hand as he waits for the seconds to pass by.
+The glass softly relayed his shape to him as he drifted. He watches how the light
+refracts around his reflection, the edges of his shape softening as the light slowly
+drifts in and out the room.
+\\ adv
+te "Lelouch."
+The boy eye remains fixed on the window a second longer before turning slightly
+towards the front of the class.
+\\ cg: cg01_act01_lelouch_window_2
+lelouch:: school_bored center
+l "Yes?"
+They make eye contact for half a second before the boy looks away again.
+te "Can you answer the question?"
+His eyes drifts lazily to the board where a function and a graph waited for him.
+"Find the inflection point for } y = x^3 - 3x^2 + 2"
+lelouch:: school_bored_ec center
+\\ note: ~ec : eyes closed, default: eyes open.~
+l "x equals one.."
+\\ note: ~side sprites will only show when character dialogue is called.~
+His eyes linger on the board for a second longer before returning to the window,
+his reflection now refraced in a slightly different way.
+t "Correct!"
+t "As expected."
+
+Lelouchʼs eyes slightly narrow at the sentiment.
+As expected...
+\\ cg: cg01_act01_lelouch_window_1
+\\ nvl
+His teachers lectures slowly dissolves into the hums of everyday life. The little
+unique gradients of the window seems much more interesting.
+There was a standard rythmn to each and every part of Lelouchʼs life.
+
+
+The bell rings, sit down, listen, answer leave.
+Even the abstract concept of the everday can be broken down into defined,
+repetitive segments.
+Wake up, Brush your teeth, go school go home and rest.
+Itʼs something Lelouch knows all to well.
+It wasnʼt nessacarily exhausting, for it to be exhausting implies theres active
+resistance.
+It was more like every aspect of his life was set in stone, pre determined like a tile
+in a geomatric pattern.
+Routine, as one might say.
+A nessacary evil if you crave stability and order in your life.
+But, to him it just felt like his life moved forward in a perfect line.
+One without deviation, one without purpose, one without resolve.
+He vaguely wonders if a life like his was ideal, a calm peaceful life without
+interruption.
+But what is a line without direction?
+He slightly smirks to himself as the absurdity of the line, rolling his fingers one
+after each other on the surface of his desk as if it would make time pass any faster.
+
+The bells soft chime came shortly after, slowly the air fills with the minor babble of
+his classmates as they begin to pack up for the day.
+However the day was not over yet.
+\\ hide: cg
+
+Lelouch quietly rises from his seat, placing his maths book into his bag without
+much thought, before making his way to the door.
+\\ scene: school_hallway
+
+Soft pats fluttered as Lelouch makes his way down the hall.
+He stands there for a moment in front of the student council room, his hand
+applying light pressure to the door handle.
+As if he is preparing himself for the meeting.
+He opens it, and steps inside.
+\\ scene: student_council_room
+\\ music: school_fun
+\\ adv
+rivalz:: school_stressed center
+r "Oh come on! Imagine the publicity!"
+r "Local school pulls off pizza world record."
+r "I can just hear the money rolling in."
+rivalz:: school_stressed right t_slideright
+nina:: school_sigh center
+n "Rivalz, that is structural absurd."
+\\ hide: rivalz
+rivalz:: school_passionate right
+r "It is if you donʼt believe!"
+r "Come on, lelouch-back me up!"
+\\ note: ~lelouch side image will show instead of sprite. side image and sprites same image just different location / cropping.~
+lelouch:: school_baffled center
+l "...Huh?"
+rivalz:: school_passionate right t_shake
+The state of the room immediately sticks out to him.
+Papers were spread absentmindely across the desk, Rivalz clutches a good
+number of pages to his chest as he tries so vigilantly to defend his idea.
+His gaze moves across the room.
+Rivalz, loud and defensive
+Nina, tense in pure disbelief.
+Shirley, hands clasp together, clearly fond of rivalz idea.
+And Milly, laid back in her chair, arms cross , loving the chaos stiring in the room.
+\\ clear
+Lelouch sets his bag down and moves to sit in his usual seat, scratching the back
+of his head amongst the absurdity, more out of habit than thought.
+lelouch:: school_bored center
+l "You want my honest opinion?"
+
+rivalz:: school_starstruck right
+r "Obviously!"
+l "..."
+lelouch:: school_bored_ec center
+l "Itʼs impratical."
+milly:: school_teasing_ec center
+m "Unfortunate. :P"
+\\ hide: rivalz
+rivalz:: school_stressed right t_shake
+r "Thatʼs not helpful!"
+lelouch:: school_smirk center
+l "You didnt ask for helpful.."
+\\ hide: rivalz
+rivalz:: school_passionate right t_shake
+r "Come on man-Imagine it!"
+r "How hard can a giant pizza be?!"
+r "Milly clearly got the funds for it."
+
+milly:: school_sigh center
+m "and how am I going to explain that we spent seventy-five percent of the fesitvals budget"
+m "on a 62 inch pizza."
+lelouch:: school_baffled center
+l ".. 62 inches?"
+Lelouch reaches forward to lift one of pages has tumbled out of rivalzʼs tight
+embrace, and skims over it.
+r "The budget resets next term—"
+r "And besides, we only have a few months left."
+r "Letʼs do something people will actually remember!"
+shirley:: school_happy left
+sh "I think thatʼs a wonderful idea Rivalz!"
+\\ hide: shirley
+shirley:: school_sweatdrop right
+sh "Though... Iʼm not sure we have an oven that can fit a pizza that... wide."
+lelouch:: school_think center
+l "...It could work"
+\\ hide: rivalz
+rivalz:: school_starstruck right t_shake
+r "See?! Lelouchʼs on my side-now we have to do it!"
+\\ hide: milly
+milly:: school_think center
+m "hmm? Didnʼt you just say it was impratical?"
+lelouch:: school_bored center
+l "I mean... it is."
+lelouch:: school_smirk center
+l "But impratical doesnʼt exactly mean impossible."
+l "I see the potential."
+Lelouch sets the loose page back down and glances at the clock for a second.
+r "Well? are you waiting for? Lay it on us!"
+lelouch:: school_think center
+l "Instead of one large pizza..."
+l "Couldnʼt we just divide it into multiple slices and arrange it as one large one?"
+lelouch:: school_explain center
+l "That way, weʼd achieve the same effect"
+l "With the limits we actually have."
+l "While retaining the memorable aspect."
+The council pauses for a second.
+\\ hide: rivalz
+rivalz:: school_think right
+r "Wait.."
+rivalz:: school_passionate right t_shake
+r "That actually sounds doable-"
+
+
+r "Lelouch you genius!"
+\\ hide: shirley
+nina:: school_think left
+n "It would certaintly maintain itʼs structural intergrity.."
+r "And look really flipping cool!!!"
+\\ hide: milly
+milly:: school_think center
+m "hmm.."
+m "now that I can approve off."
+\\ hide: milly
+milly:: school_tease center
+m "As long as we dont set any ovens on fire."
+
+lelouch:: school_polite center
+l "Just a thought."
+\\ clear
+\\ nvl
+Lelouch returns to watching the clock tick. The second hand ticks forward while
+the first remains stagnant on the hour.
+For a moment the chaos within the student council room dwindles, a small
+suggestion causing ideals to align.
+It all makes sense, but lelouch canʼt help but feel detatch from it all.
+Rivalz immediately jumps back to his seat, hastily pushing all his loose papers
+towards him so he can revise his grand plan, the others going back to pitching
+their own ideas for the school festival.
+
+A chair softly shifts towards lelouch, Shirley leaning closer, just enough that only
+lelouch can hear her.
+\\ adv
+shirley:: school_warm center
+sh "I didnʼt see you in the common room last period,"
+sh "Did you just come from maths?"
+Lelouch turns to face her with a mild expression,
+lelouch:: school_bored center
+l "Yeah, something like that."
+\\ hide: shirley
+shirley:: school_giggle center
+Shirley lets out a small laugh, flashing him her signature warm smile.
+sh "Well, Iʼm glad you could make it today,"
+sh "Things were getting a little heated before you arrived.."
+lelouch:: school_polite center
+Lelouch subtly smiles back, just enough to keep her satisfied.
+l "Just playing my part.."
+\\ hide: shirley
+shirley:: school_default center
+sh "Oh-Right!"
+
+
+sh "Suzaku isnʼt in again is he?"
+\\ hide: shirley
+shirley:: school_sad center
+sh "Thatʼs the second time this week.."
+".."
+lelouch:: school_default center
+l "He mentioned something about family matters."
+sh "Oh really?"
+sh "I hope heʼs okay.."
+Lelouch nods lightly,
+lelouch:: school_polite center
+l "Yeah, Iʼm sure itʼs nothing serious"
+sh "Yeah!"
+sh "And hopefully you can get him up to speed!"
+sh "Heʼd love the giant pizza.."
+lelouch:: school_polite center
+l "Of course.."
+Her smile lingers for a moment longer before rivalz steals her attention away for
+approval on his pizza measurements.
+\\ clear
+His smile fades, his gaze returning to the clock again, waiting
+patiently for the day to end.
+\\ nvl
+
+His fellow council members voices shifted to those of farewells as the day finally
+came to an end.
+He retrieves his bag and trades brief goodbyes before making his way towards the
+school gates.
+\\ music: autumn_calm
+Once outside, he clicks his phone on, intending on checking the time. Only to be
+met with a small reminder he set on his phone a day prior.
+\\ adv
+lelouch:: school_default center
+l "Right, the cakes. Nunnallyʼs preparing tea today isnʼt she."
+\\ nvl
+He returns his phone back to his coat pocket, before making a u turn towards the
+small shopping district close to the school.
+The idle conversation of his fellow students pass by him as he walks amongst
+them.
+A particularly loud group of boys walk past him, eating cheap takoyaki while
+arguing about an anime lelouch couldnʼt quite catch.
+
+
+On the other side, a couple sits close together, sharing a comfortable silence as
+the breeze moves between them.
+Lelouch briefly watches, then looks ahead.
+
+it all felt so mundane.
+He considers it for a moment, so is he.
+Lelouch walks the same route he always took to the district, down to the same
+path. He knows exactly how long it takes, 10 minutes to and back.
+He knows it without thinking, just like everything else.
+What makes this any different from anyone else?
+He shrugs off the thoughts, there were much more pressing matters he needs to
+focus on.
+Nunnally is patiently waiting at home for him, usually this time the tea is already set.
+2 cups of green tea she was insisted would fair nicely with a slice of strawberry
+shortcake if the price wasnʼt too high.
+Lelouch had obviously agreed, not one to frequently say no to his little sister,
+especially to unnessaracry purchases he knew would make her day.
+They werent exactly well off, their home was small and quaint compared to the
+grand estates of some of his classmates.
+The school covers most of it, thanks to Milly.
+Itʼs convenient.
+Tea time used to be something they all shared, his mother setting down the plates
+and pouring the tea instead of Nunnally.
+Small loving conversations about school and their day around the dinner table.
+Unfortunately, small routines tend to die as quickly as their picked up..
+His father on the otherhand is... elsewhere.
+Lelouch exhaled quietly, his hands snug within his coat pockets as he continued
+down the tree lined street.
+Nothing about his life is exactly difficult. Repetitive yes, but managable.
+
+
+He has food, he has a roof over him and his sisterʼs head and he has enough to
+provide for her with the small money he has.
+And when things are out of his reach, the school does.
+Stable, predictable, and yet he canʼt seem to shake off the feeling that heʼs
+waiting.
+For something, anything. A reason, a direction.
+Something that isnʼt already decided.
+However, Nunnally smiles each time he comes home, that matters. Even if she
+couldnʼt see him fully.
+And, if anything ever happened, Suzaku would always be there. Ready to help,
+ready to protect.
+Lelouchʼs eyes narrow softly at the thought for a moment, before shrugging the
+feeling off.
+Lelouch eventually reached the end of the path, to the point where it splits.
+Right - the quick way to the shops.
+Left - the longer route through the woods.
+
+Heʼs taken the right path every time.
+Today, without really deciding, he turns left.
+\\ scene: forest_clearing
+\\ music: forest_theme
+The hustle and bustle of his fellow students gradually begins to drown out behind
+him. Though he was never that close to begin with.
+The maple trees that once lined the street grow denser, the narrow pavement
+cutting off abruptly.
+The pavement was now replaced by a rugged dirt path.
+He keeps walking.
+The air cools around him, it feels heavier as if the breeze was pressing down on
+his skin.
+A gust of wind passes by..
+
+
+The inside of the forest was a sight to behold in of itself.
+Strong rays of light filters through the maple canopy, bouncing off the deep red
+leaves to leave little fragments of red and gold on the forest floor.
+His steps slow down without him meaning to.
+The usual numbness within his chest remains, but now something else restlessly
+stirs beneath it.
+A faint awareness.
+The little grumbles of gravel rubbing on dirt filled the air as he continues to make
+his way through..
+A single leaf spirals down in front of him, landing on the dirt path with an unatural
+softness.
+then—
+\\ sfx: rustle
+Rustle.
+His eyes dart to the thicker underbush on his right, nothing moved.
+He keeps walking.
+The trees crowd closer together, the golden fragments of light grow few and far
+between, a deep shadow manifesting in their place.
+\\ sfx: rustle_closer
+Rustle.
+Closer this time..
+Another sound growled through the air, a croak that a few leaves couldnʼt have
+possibly made.
+Itʼs long and uneven, dragging through the air.
+Lelouch stops in his tracks, his feet now planted firmly on the gravel as he looks
+around.
+His fingers tighten softly inside his pockets.
+His gaze sharpens, albeit slightly, but enough.
+\\ adv
+lelouch:: school_startled center
+l "..."
+l "...Hello?"
+The sound stops.
+
+
+A small, needy breath takes its place.
+one frail, not his.
+"...p-"
+The sound breaks..
+"...please..."
+Heʼs still..
+The plea lingers in the air, it felt too directed to be an animal, but too raw for it to be
+a person.
+"...blood."
+The air grows heavier by the second, the pleas gradually growing in volume.
+and desperation.
+Lelouch steps forward.
+The calls grow clear with each step he took.
+The wetness of its voice.
+The heavy strain in its vocal chords.
+The tremors that lingered in each call it draws out.
+It pulled him forward.
+The thick maple trees thin slightly.
+And then he stops.
+\\ cg: cg02_act01_forest
+A dark liquid pools at his feet, a dark maroon staining the ground and everything
+near it.
+Itʼs spread across the ground thick and uneven, some parts dried across the white
+bell flowers that sat beside it.
+lelouch:: school_shocked center
+l "...Blood..?"
+His gaze drifts upwards.
+A lithe figure lies at the centre of it all, deathly still.
+
+\\ nvl
+A girl, close to his age. Her clover hair fanned outward amongst the blood, her
+strands clinging together in grotesque clumps where the liquid has soaked
+through.
+
+Her eyes are open, a dimmed gold that were glazed over. Her pupils blown and
+unfocused.
+She remains still.
+Lelouchʼs eyes continue to drift, much to his dismay.
+They latch on to her chest.
+A stake, driven clean but forcefully through her chest.
+The wood tinted a sickly red in all the places it had the most contact with her
+blood.
+His feet remain planted on the grass, the sticky substance slowly making contact
+with his shoes as it spread.
+His hands begin to tremble at the obscene sight, a knot in his throat forming.
+\\ adv
+"....blood..."
+"...p-please.."
+Her eyes shift slowly, landing on him..
+lelouch:: school_shocked center
+l "...What?"
+"...bloood.."
+"...pelase..."
+l "..."
+l "..why..?"
+lelouch:: school_shocked center
+l "What are you—"
+"...please.."
+Softer words now, more desperate than anything sheʼs said prior.
+Lelouch doesnʼt move, he cannot bring himself to.
+His eyes drop down to the blood for a moment then back to her.
+
+\\ nvl
+and then, something in his head clicks.
+He moves, his legs thinking before he could.
+He kneels beside her carefully, her blood now staining his knees through his
+school uniform.
+Gently, his hands wander to the underside of her shoulders. Sheʼs warm,
+incredibly warm.
+He lifts her, pulling her into a mock embrace so that her weight settled against
+him, sheʼs incredibly light.
+for a second, the world lingers for a moment.
+And then she moves.
+\\ cg: cg03_act01_feed
+Two sharp points pierce his neck. The pain was bright and clean.
+A sharp hiss mixed with a groan escapes his lips as his neck swells with pain for a
+brief agonizing second.
+It flares for a moment then immediately dissolves into something else.
+
+Into a strange sickly warmth.
+As a deep, rhythmic suction begins.
+The warmth first concentrates in his neck, before slowly crawling through his
+body, through his chest down to his arms and into the very finger tips that holds
+her in place.
+His grip around her instinctively tightens, each suck feels like a gentle tug as she
+slowly pulls more and more blood out of him.
+The more she drank, the more he felt something deep in his soul pulling at him.
+His thoughts began to blur together in a frenzy, slowly falling into a state of
+intoxicating euphoria mixed with genuine light headedness from the blood loss.
+The crisp sharp edges of the maple leaves begins to warp, slowly dissolving into a
+visual symphony of red green and yellow.
+The loving song of a robin dulled into a buzz.
+In their place, something else settles in, one that is heavy, quiet but certain.
+
+
+For a moment, he isnʼt empty.
+Each pull hollows him out further, and yet it feels filling.
+He felt... Seen.
+Needed.
+The explicit details of his feelings begin to blur along with the fabric of his reality.
+His fragile body slowly untangles before laying limp in her arms.
+\\ adv
+"t—thank you.."
+"..."
+"..."
+"Lelouch?"
+"Lelouch!"
+\\ break
+\\ scene: hospital_room_afternoon
+\\ music: lelouch_theme
+\\ nvl
+The afternoon light, once warm, has taken a harsher form. It spilled in through the
+slim opening of the blinds, claiming anything that found itself on its path.
+Lelouchʼs eyes being one of the poor victims.
+His eyes immediately clenched, not used to the direct sunlight before gradually
+opening again. Small beeps permeate the air in even intervals, it sounds rough
+around the edges which seemed to amplify Lelouchʼs incoming headache.
+His ears weakly graze over to the left, he could hear faint chatter in the
+background.
+What sounded to be a doctor speaking in a quiet, controlled tone.
+\\ adv
+"—Is severely anemic."
+"But his levels have managed to stabilize unusually fast.."
+"Unfortunately, we werenʼt able to locate a source for the blood loss."
+"But we are glad to say that a blood transfusion will not be nessacary."
+A familiar voice rang out.
+"Thatʼs great news. Thank you for all your hard work."
+The boy slightly turns back to the bed, their eyes latching on to each other.
+
+
+Immediately,
+2 surprisingly firm arms find themselves wrapped around Lelouchʼs now upright
+self.
+\\ cg: cg04_act01_hospital
+His arms however awkwardly above the boy, before returning the hug.
+lelouch:: hospital_confused center
+l "Suzaku?"
+\\ note: ~dialogue within cgs will have side images for everyone.~
+suzaku:: shrine_relieved left
+s "Thank god."
+He pulls back.
+suzaku:: shrine_relieved left
+"I thought i lost you.."
+\\ note: ~flashback shown with graphics~
+Blood. A lot of it, pooling from the center.
+The warm breath on his neck, the weight on his chest.
+suzaku:: shrine_worried left
+s "You really shouldnʼt wander like that Lelouch..."
+l "..."
+suzaku:: shrine_worried left
+s "Lelouch?"
+lelouch:: hospital_absentminded center
+l "Yeah, Iʼm sorry.."
+His fingers find themselves at the back of his neck like always.
+They lightly graze over 2 swollen bumps.
+lelouch:: hospital_absentminded center
+l "..."
+Their clean, almost fully healed except for 2 rough scabs that had been easily
+spaced out.
+They linger there a second longer, a sickly feeling arises within his chest,
+drawing him to something, somewhere.
+lelouch:: hospital_think center
+l "I see.."
+d "It seems like youʼve fully awakened, Iʼm glad."
+d "I will let the others know."
+d "Try not to strain yourself, alright?"
+Lelouch returned a weak nod.
+The doctor quietly exits the room, leaving the two boys alone.
+
+suzaku:: shrine_worried left
+s "..."
+s "I found you.."
+s "You were just lying there, surrounded by blood."
+s "Like a disturbing amount."
+s "Iʼm glad the ambulance came as quickly as they did."
+lelouch:: hospital_confused center
+l "w—What happened?.."
+suzaku:: shrine_explain left
+s "Well um."
+s "I had been out there already.."
+s "Strange reports, mainly animals."
+s "So i thought iʼd check it out."
+Lelouchʼs gaze shifts to the iv bag stationed next to him. A thin line of red drips
+downwards.
+suzaku:: shrine_worried left
+s "You werenʼt even that far in.."
+s "Just off the main path.."
+s "... It looked like you had just been dropped there."
+l "..."
+s "And you were cold."
+s "Pale, like youʼd been there for hours."
+suzaku:: shrine_think left
+s "But that doesnʼt make any sense."
+s "And i couldnt find where the blood had came from."
+lelouch:: hospital_neutral center
+l "Strange."
+A quiet breath escapes Suzakuʼs lips.
+suzaku:: shrine_worried left
+s "I tried to wake you."
+s "Shook you, called your name."
+s "Nothing."
+s "You didnʼt react at all."
+
+
+s "When the ambulance arrived, they said youʼd already been out there for a few hours."
+suzaku:: shrine_think left
+s "It was just so..."
+s "Weird."
+s "You scared me you know.."
+His hands settled gently on Lelouchʼs shoulder.
+suzaku:: shrine_warm left
+s "Just.."
+s "Dont do that again, alright?"
+lelouch:: hospital_polite center
+l "..I wont.."
+His gaze finds itself back on the iv drip, following the thick lines of blood each drop.
+suzaku:: shrine_smile left
+s "The doctor said you can be officially discharged tomorrow.."
+lelouch:: hospital_confused center
+l "...Already?"
+suzaku:: shrine_smile left
+s "Iʼm going to stay the night at your place tonight.. Nunnallyʼs worried sick."
+Suzaku brushes off his uniform and rises.
+s "Get some rest okay?"
+s "Iʼll see you tomorrow."
+\\ hide: suzaku
+Suzaku shoots him a quiet small smile, before leaving, quietly sliding the door
+behind him.
+\\ nvl
+The silence in the room resumes, only broken occasionally by the soft chime of
+the heart monitor.
+\\ adv
+"...p—please.."
+\\ nvl
+Lelouchʼs half lidded eyes widen for a second, his head looking left and right
+weakly to find the source of the noise.
+Thereʼs no one there.
+His hand rises slowly, to the back of his neck.
+He doesnʼt pull it away.
+\\ break

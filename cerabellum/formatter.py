@@ -1,0 +1,203 @@
+import os
+import re
+
+
+def classify_line(line):
+    stripped = line.strip()
+
+    if stripped == "":
+        return "blank"
+
+    if stripped.startswith("\\\\ note:") or stripped.startswith("\\\\ ~"):
+        return "comment"
+
+    if stripped.startswith("#"):
+        return "comment"
+
+    if stripped == "\\\\ nvl":
+        return "nvl"
+
+    if stripped == "\\\\ adv":
+        return "adv"
+
+    if stripped.startswith("\\\\ scene:"):
+        return "scene"
+
+    if stripped.startswith("\\\\ music:"):
+        return "music"
+
+    if stripped.startswith("\\\\ sfx:"):
+        return "sfx"
+
+    if stripped.startswith("\\\\ cg:"):
+        return "cg"
+
+    if stripped.startswith("\\\\ hide:"):
+        return "hide"
+
+    if stripped == "\\\\ clear":
+        return "clear"
+
+    if stripped == "\\\\ break":
+        return "break"
+
+    if stripped.startswith("\\\\ py:"):
+        return "py"
+    
+    if stripped.startswith("\\\\ label:"):
+        return "label"
+
+    if stripped.startswith("\\\\ jump:"):
+        return "jump"
+
+    if stripped.startswith("\\\\ call:"):
+        return "call"
+
+    if "::" in stripped:
+        return "sprite"
+
+    dialogue_pattern = re.match(r'^[a-z_]+\s+"', stripped)
+    if dialogue_pattern:
+        return "dialogue"
+
+    if stripped.startswith('"'):
+        return "dialogue"
+
+    return "narrator"
+
+
+def convert_line(line, line_type, state, config=None):
+    """
+    Converts a single classified line to Ren'Py syntax.
+
+    state dict tracks:
+        mode      — "nvl" or "adv"
+        positions — last known position of each sprite
+
+    config — optional Config object for side image awareness.
+    If provided, hide calls for side image characters are skipped.
+    """
+    stripped = line.strip()
+
+    if line_type == "blank":
+        return ""
+
+    if line_type == "comment":
+        return ""
+
+    if line_type == "nvl":
+        state["mode"] = "nvl"
+        return "nvl clear\nwindow hide"
+
+    if line_type == "adv":
+        state["mode"] = "adv"
+        return "window show"
+
+    if line_type == "scene":
+        name = stripped.replace("\\\\ scene:", "").strip()
+        return f"scene {name} with t_default"
+
+    if line_type == "music":
+        name = stripped.replace("\\\\ music:", "").strip()
+        return f"$ renpy.music.play('audio/music/{name}.ogg', fadein=1.0)"
+
+    if line_type == "sfx":
+        name = stripped.replace("\\\\ sfx:", "").strip()
+        return f"$ renpy.sound.play('audio/sfx/{name}.ogg')"
+
+    if line_type == "cg":
+        name = stripped.replace("\\\\ cg:", "").strip()
+        return f"show {name}"
+
+    if line_type == "hide":
+        name = stripped.replace("\\\\ hide:", "").strip()
+
+        # if config is available and this character uses side images
+        # skip the hide — Ren'Py handles it automatically ♡
+        if config is not None and config.is_side_image(name):
+            return ""
+
+        return f"hide {name}"
+
+    if line_type == "clear":
+        return "hide screen sprites"
+
+    if line_type == "break":
+        return "scene black with Dissolve(1.0)\npause 0.5"
+    
+    if line_type == "label":
+        name = stripped.replace("\\\\ label:", "").strip()
+        return f"label {name}:"
+
+    if line_type == "jump":
+        name = stripped.replace("\\\\ jump:", "").strip()
+        return f"jump {name}"
+
+    if line_type == "call":
+        name = stripped.replace("\\\\ call:", "").strip()
+        return f"call {name}"
+        
+
+    if line_type == "py":
+        # \\ py: pass through as raw python/renpy command
+        # e.g. \\ py: renpy.scene()  →  $ renpy.scene()
+        command = stripped.replace("\\\\ py:", "").strip()
+        return f"$ {command}"
+
+    if line_type == "sprite":
+        parts = stripped.split("::")
+        char_id = parts[0].strip()
+        rest = parts[1].strip().split()
+        state_name = rest[0]
+        position = rest[1] if len(rest) > 1 else state["positions"].get(char_id, "center")
+        state["positions"][char_id] = position
+
+        # check if there's a transition specified (t_ prefix)
+        transition = "t_default"
+        if len(rest) > 2 and rest[2].startswith("t_"):
+            transition = rest[2]
+
+        return f"show {char_id}_{state_name} at {position} with {transition}"
+
+    if line_type == "dialogue":
+        return stripped
+
+    if line_type == "narrator":
+        if state["mode"] == "nvl":
+            return f'narrator "{stripped}"'
+        else:
+            return f'"{stripped}"'
+
+    return ""
+
+
+def format_script(input_path, output_path, config=None):
+    """
+    Reads a .ceras or .md script file with \\\\ notation
+    and outputs a .rpy Ren'Py script file.
+
+    config — optional Config object. If provided, side image
+    characters will not generate hide calls.
+    """
+    state = {
+        "mode": "nvl",
+        "positions": {}
+    }
+
+    output_lines = []
+    output_lines.append("## ~ generated by cerabellum ~ do not edit manually please <3")
+    output_lines.append("")
+
+    with open(input_path, "r", encoding="utf-8") as f:
+        for line in f:
+            line_type = classify_line(line)
+            converted = convert_line(line, line_type, state, config)
+            if converted:
+                output_lines.append(converted)
+
+    os.makedirs(os.path.dirname(os.path.abspath(output_path)), exist_ok=True)
+
+    with open(output_path, "w", encoding="utf-8") as f:
+        f.write("\n".join(output_lines))
+
+    print(f"~ cerabellum ~ formatted: {output_path}")

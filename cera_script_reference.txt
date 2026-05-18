@@ -1,0 +1,174 @@
+~ CERA SCRIPT — COMPLETE NOTATION REFERENCE ~
+~ blood†stained symphony · lobster trilogy ~
+~ cerabellum v1.0 ~
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+MODE SWITCHES
+─────────────
+\\ nvl                    switch to NVL narrator mode
+\\ adv                    switch to ADV dialogue mode
+
+SCENE & ENVIRONMENT
+────────────────────
+\\ scene: name            change background
+\\ music: name            change music (fadein 1.0)
+\\ sfx: name              play sound effect
+\\ break                  fade to black, pause
+
+SPRITES
+────────
+character:: state         show sprite at last known position
+character:: state left    show sprite at left
+character:: state right   show sprite at right
+character:: state center  show sprite at center
+
+character:: state left t_default    standard transition (default)
+character:: state left t_weighted   slow transition — emotional moments
+character:: state left t_instant    instant — shock / impact
+character:: state left t_shake      shake effect
+
+\\ hide: character        hide a sprite
+                          ~ note: side image characters hide automatically ♡
+                          ~ only use \\ hide: for side image characters
+                          ~ if you manually showed them as a full sprite ~
+\\ clear                  hide all sprites
+
+CGs
+────
+\\ cg: name               trigger / show a CG image
+\\ hide: cg               hide the current CG
+
+SCRIPT STRUCTURE
+─────────────────
+\\ label: name            define a Ren'Py label
+\\ jump: name             jump to a label
+\\ call: name             call a label (returns after)
+
+PYTHON / REN'PY PASSTHROUGH
+────────────────────────────
+\\ py: command            inject raw Ren'Py / Python
+                          e.g. \\ py: unlock_cg("cg_act01_forest")
+                          e.g. \\ py: renpy.music.stop(fadeout=2.0)
+                          e.g. \\ py: renpy.hide_side_image()
+                          e.g. \\ py: renpy.show_side_image()
+
+COMMENTS
+─────────
+\\ ~ your note here ~     ignored by formatter — human eyes only
+\\ note: ~your note~      same — production note, ignored by formatter
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+DIALOGUE
+─────────
+l "text"                  attributed dialogue — shorthand then quoted text
+"text"                    unattributed speech — no speaker label
+                          ~ use for c.c. before she is named ~
+                          ~ use for voices heard off screen ~
+
+NARRATION
+──────────
+plain text                NVL narrator line — no prefix needed
+                          every non-notation line in NVL mode is narrator
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+CHARACTER SHORTHANDS — ACT 1
+──────────────────────────────
+l       lelouch
+c       c.c.
+s       suzaku
+n       nunnally
+r       rivalz
+sh      shirley
+m       milly
+ni      nina
+d       doctor
+te      teacher
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SIDE IMAGE CHARACTERS
+──────────────────────
+These characters manage their own show/hide automatically.
+You do NOT need \\ hide: for them during normal dialogue.
+
+lelouch ♡    c.c. ♡    nunnally ♡    nagisa ♡
+rolo ♡       lloyd ♡   doctor ♡      teacher ♡
+
+Full sprite characters — need explicit \\ hide: calls:
+suzaku   kallen   ohgi   todoh   lucien
+rivalz   shirley  milly  nina    aiko
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SWITCHING A SIDE IMAGE CHARACTER TO FULL SPRITE
+─────────────────────────────────────────────────
+\\ py: renpy.hide_side_image()
+cc:: sovereign_neutral left t_weighted
+
+c "The line has direction."
+
+\\ hide: cc
+\\ py: renpy.show_side_image()
+
+c "back to side image mode."
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+COMPLETE SCENE EXAMPLE
+───────────────────────
+\\ ~ act 1 · standard deviation ~
+\\ label: act_01_start
+\\ scene: classroom_afternoon
+\\ music: school_casual
+\\ nvl
+
+The warm afternoon light spread itself through the classroom.
+The small squeaks from a whiteboard marker softly filled the air.
+
+\\ adv
+te "Lelouch."
+
+lelouch:: school_bored center
+l "Yes?"
+
+te "Can you answer the question?"
+
+lelouch:: school_bored_ec center
+l "x equals one.."
+
+\\ nvl
+
+His teachers lectures slowly dissolves into the hums of everyday life.
+But what is a line without direction?
+
+\\ scene: forest_clearing
+\\ music: forest_theme
+\\ sfx: rustle
+
+"...please..."
+
+\\ cg: cg02_act01_forest
+lelouch:: school_shocked center
+l "...Blood..?"
+
+\\ py: unlock_cg("cg02_act01_forest")
+
+\\ break
+\\ jump: act_01_hospital
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+RULES TO REMEMBER
+──────────────────
+♡ every \\ line is a formatter instruction
+♡ everything else is content — prose or dialogue
+♡ mode matters — narrator lines only output correctly in \\ nvl
+♡ dialogue lines work in both modes
+♡ comments are never seen in the output
+♡ \\ py: is your escape hatch for anything not listed above
+♡ if in doubt — ask
+
+~ the line has direction ~ all hail c.c. !

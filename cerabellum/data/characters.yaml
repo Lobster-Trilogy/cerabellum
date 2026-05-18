@@ -1,0 +1,340 @@
+characters:
+
+  lelouch:
+    display_name: "Lelouch Lamperouge"
+    shorthand: "l"
+    colour: "#8B0000"
+    side_image: True
+    flower: "spider_lily"
+
+    defaults:
+      position: center
+      transition: t_default
+      base: school_uniform
+      eyes: contacts
+
+    bases:
+      school_uniform: "lelouch/base_school"
+      mansion_casual: "lelouch/base_mansion"
+      zero_coat:      "lelouch/base_zero"
+
+    expressions:
+      neutral:        "lelouch/expr_neutral"
+      sharp:          "lelouch/expr_sharp"
+      soft:           "lelouch/expr_soft"
+      cold:           "lelouch/expr_cold"
+      smile_almost:   "lelouch/expr_smile_almost"
+      smile_real:     "lelouch/expr_smile_real"
+      frustrated:     "lelouch/expr_frustrated"
+      mark_active:    "lelouch/expr_mark"
+      
+    eyes:
+      contacts:       "lelouch/eyes_contacts"
+      vampire:        "lelouch/eyes_vampire"
+      masked:         "lelouch/eyes_masked"
+
+    states:
+      school_neutral:
+        base: school_uniform
+        expression: neutral
+        eyes: contacts
+
+      mansion_soft:
+        base: mansion_casual
+        expression: soft
+        eyes: vampire
+        note: "c.c. and nunnally specific"
+
+      zero_masked:
+        base: zero_coat
+        expression: cold
+        eyes: masked
+        note: "Zero is a performance"
+
+      zero_unmasked:
+        base: zero_coat
+        expression: cold
+        eyes: vampire
+        warning: "act 24 only"
+
+      mark_activated:
+        base: mansion_casual
+        expression: mark_active
+        eyes: vampire
+        warning: "use t_weighted"
+
+        # c.c.
+  cc:
+    display_name: "C.C."
+    shorthand: "c"
+    colour: "#ffff00"
+    side_image: True
+    flower: "lily_of_the_valley"
+
+    defaults:
+      position: center
+      transition: t_default
+      base: lelouch_shirt
+      eyes: contacts
+
+    bases:
+      school_uniform: "cc/base_school"
+      mansion_casual: "cc/base_mansion"
+      lelouch_shirt: "cc/base_lelouch_shirt"
+
+    expressions:
+      neutral:        "cc/expr_neutral"
+      sharp:          "cc/expr_sharp"
+      soft:           "cc/expr_soft"
+      cold:           "cc/expr_cold"
+      smile_almost:   "cc/expr_smile_almost"
+      smile_real:     "cc/expr_smile_real"
+      frustrated:     "cc/expr_frustrated"
+      mark_active:    "cc/expr_mark"
+      
+    eyes:
+      contacts:       "cc/eyes_contacts"
+      vampire:        "cc/eyes_vampire"
+
+    states:
+      school_neutral:
+        base: school_uniform
+        expression: neutral
+        eyes: contacts
+
+      mansion_soft:
+        base: mansion_casual
+        expression: soft
+        eyes: vampire
+        note: "c.c. and nunnally specific"
+
+
+      mark_activated:
+        base: mansion_casual
+        expression: mark_active
+        eyes: vampire
+        warning: "use t_weighted"  
+  suzaku:
+    display_name: "Suzaku Kururugi"
+    shorthand: "s"
+    colour: "#00008B"
+    side_image: True
+    flower: "blue_tiger_lily"
+
+    defaults:
+      position: center
+      transition: t_default
+      base: school_uniform
+      eyes: contacts
+
+    bases:
+      school_uniform: "suzaku/base_school"
+      shrine_formal: "suzaku/base_shrine"
+      hunter_fit: "suzaku/base_hunter"
+
+    expressions:
+      neutral:        "suzaku/expr_neutral"
+      sharp:          "suzaku/expr_sharp"
+      soft:           "suzaku/expr_soft"
+      cold:           "suzaku/expr_cold"
+      smile_almost:   "suzaku/expr_smile_almost"
+      smile_real:     "suzaku/expr_smile_real"
+      frustrated:     "suzaku/expr_frustrated"
+      
+    eyes:
+      default:       "suzaku/eyes_default"
+
+    states:
+      school_neutral:
+        base: school_uniform
+        expression: neutral
+        eyes: default
+
+      shrine_formal:
+        base: shrine_formal
+        expression: soft
+        eyes: default
+        note: "suzaku specific"
+      
+      hunter_ready:
+        base: hunter_fit
+        expression: sharp
+        eyes: default
+        note: "suzaku specific"
+
+  rivalz:
+    display_name: "Rivalz Cardemonde"
+    shorthand: "r"
+    colour: "#6080C8"
+    side_image: False
+    flower: None
+
+    defaults:
+      position: center
+      transition: t_default
+      base: school_uniform
+      eyes: default
+
+    bases:
+      school_uniform: "rivalz/base_school"
+
+    expressions:
+      neutral:        "rivalz/expr_neutral"
+      sharp:          "rivalz/expr_sharp"
+      soft:           "rivalz/expr_soft"
+      cold:           "rivalz/expr_cold"
+      smile_almost:   "rivalz/expr_smile_almost"
+      smile_real:     "rivalz/expr_smile_real"
+      frustrated:     "rivalz/expr_frustrated"
+      
+    eyes:
+      default:       "rivalz/eyes_default"
+
+    states:
+      school_neutral:
+        base: school_uniform
+        expression: neutral
+        eyes: default
+
+  milly:
+    display_name: "Milly Ashford"
+    shorthand: "m"
+    colour: "#C8906A"
+    side_image: False
+    flower: None
+
+    defaults:
+      position: center
+      transition: t_default
+      base: school_uniform
+      eyes: default
+
+    bases:
+      school_uniform: "milly/base_school"
+
+    expressions:
+      neutral:        "milly/expr_neutral"
+      sharp:          "milly/expr_sharp"
+      soft:           "milly/expr_soft"
+      cold:           "milly/expr_cold"
+      smile_almost:   "milly/expr_smile_almost"
+      smile_real:     "milly/expr_smile_real"
+      frustrated:     "milly/expr_frustrated"
+      
+    eyes:
+      default:       "milly/eyes_default"
+
+    states:
+      school_neutral:
+        base: school_uniform
+        expression: neutral
+        eyes: default
+
+  shirley:
+    display_name: "Shirley Fenette"
+    shorthand: "f"
+    colour: "#E8A0A0"
+    side_image: False
+    flower: None
+
+    defaults:
+      position: center
+      transition: t_default
+      base: school_uniform
+      eyes: default
+
+    bases:
+      school_uniform: "shirley/base_school"
+
+    expressions:
+      neutral:        "shirley/expr_neutral"
+      sharp:          "shirley/expr_sharp"
+      soft:           "shirley/expr_soft"
+      cold:           "shirley/expr_cold"
+      smile_almost:   "shirley/expr_smile_almost"
+      smile_real:     "shirley/expr_smile_real"
+      frustrated:     "shirley/expr_frustrated"
+      
+    eyes:
+      default:       "shirley/eyes_default"
+
+    states:
+      school_neutral:
+        base: school_uniform
+        expression: neutral
+        eyes: default
+  
+  nina:
+    display_name: "Nina Einstein"
+    shorthand: "ni"
+    colour: "#E0E8F0"
+    side_image: False
+    flower: None
+
+    defaults:
+      position: center
+      transition: t_default
+      base: school_uniform
+      eyes: default
+
+    bases:
+      school_uniform: "nina/base_school"
+
+    expressions:
+      neutral:        "nina/expr_neutral"
+      sharp:          "nina/expr_sharp"
+      soft:           "nina/expr_soft"
+      cold:           "nina/expr_cold"
+      smile_almost:   "nina/expr_smile_almost"
+      smile_real:     "nina/expr_smile_real"
+      frustrated:     "nina/expr_frustrated"
+      
+    eyes:
+      default:       "nina/eyes_default"
+
+    states:
+      school_neutral:
+        base: school_uniform
+        expression: neutral
+        eyes: default
+  
+  nunnally:
+    display_name: "Nunnally Lamperouge"
+    shorthand: "n"
+    colour: "#FFC0CB"
+    side_image: True
+    flower: None
+
+    defaults:
+      position: center
+      transition: t_default
+      base: school_uniform
+      eyes: default
+
+    bases:
+      school_uniform: "nunnally/base_school"
+      mansion_casual: "nunnally/base_mansion"
+
+    expressions:
+      neutral:        "nunnally/expr_neutral"
+      sharp:          "nunnally/expr_sharp"
+      soft:           "nunnally/expr_soft"
+      cold:           "nunnally/expr_cold"
+      smile_almost:   "nunnally/expr_smile_almost"
+      smile_real:     "nunnally/expr_smile_real"
+      frustrated:     "nunnally/expr_frustrated"
+      
+    eyes:
+      default:       "nunnally/eyes_default"
+    
+    states:
+      school_neutral:
+        base: school_uniform
+        expression: neutral
+        eyes: default
+
+      mansion_soft:
+        base: mansion_casual
+        expression: soft
+        eyes: default
+        note: "c.c. and nunnally specific"
