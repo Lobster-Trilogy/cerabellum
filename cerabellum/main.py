@@ -19,7 +19,7 @@ window.configure(bg=BG)
 header = tk.Frame(window, bg=BG)
 header.pack(fill="x", padx=20, pady=(20, 10))
 
-window.iconbitmap('wwesh.ico') 
+window.iconbitmap("favicon.ico") 
 
 title = tk.Label(
     header,
