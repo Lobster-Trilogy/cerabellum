@@ -294,7 +294,7 @@ def highlight():
     patterns = {
         "comment": r"##[^\n]*",
         "command": r"^\$[^\n]*",
-        "keyword": r"\b(show|scene|hide|nvl|narrator|window|play|pause)\b",
+        "keyword": r"\b(show|scene|hide|nvl|narrator|adv_narrator|window|play|pause)\b",
         "string":  r'"[^"]*"',
         "cg":      r"\bcg_\w+",
     }

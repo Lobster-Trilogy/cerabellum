@@ -10,73 +10,61 @@ def classify_line(line):
 
     if stripped.startswith("\\\\ note:") or stripped.startswith("\\\\ ~"):
         return "comment"
-
     if stripped.startswith("#"):
         return "comment"
 
     if stripped == "\\\\ nvl":
         return "nvl"
-
     if stripped == "\\\\ adv":
         return "adv"
 
     if stripped.startswith("\\\\ scene:"):
         return "scene"
-
     if stripped.startswith("\\\\ music:"):
         return "music"
-
     if stripped.startswith("\\\\ sfx:"):
         return "sfx"
-
     if stripped.startswith("\\\\ cg:"):
         return "cg"
-
     if stripped.startswith("\\\\ hide:"):
         return "hide"
-
     if stripped == "\\\\ clear":
         return "clear"
-
     if stripped == "\\\\ break":
         return "break"
-
-    if stripped.startswith("\\\\ py:"):
-        return "py"
-    
     if stripped.startswith("\\\\ label:"):
         return "label"
-
     if stripped.startswith("\\\\ jump:"):
         return "jump"
-
     if stripped.startswith("\\\\ call:"):
         return "call"
+        
+    if stripped.startswith("\\\\ py:"):
+        return "py"
+    if stripped.startswith("\\\\ screen:"):
+        return "screen"
+
+    if stripped.startswith("\\\\ hidescreen:"):
+        return "hidescreen"
 
     if "::" in stripped:
         return "sprite"
 
-    dialogue_pattern = re.match(r'^[a-z_]+\s+"', stripped)
-    if dialogue_pattern:
+    # Attributed dialogue — shorthand prefix + quoted text
+    # covers l, s, te, sh, ni, etc.
+    if re.match(r'^[a-z_]{1,6}\s+"', stripped):
         return "dialogue"
 
+    # Unattributed speech — line starts with a quote
+    # distinct from narrator prose — renders as spoken text
     if stripped.startswith('"'):
-        return "dialogue"
+        return "unattributed"
 
+    # Everything else is narrator prose
     return "narrator"
 
 
 def convert_line(line, line_type, state, config=None):
-    """
-    Converts a single classified line to Ren'Py syntax.
-
-    state dict tracks:
-        mode      — "nvl" or "adv"
-        positions — last known position of each sprite
-
-    config — optional Config object for side image awareness.
-    If provided, hide calls for side image characters are skipped.
-    """
     stripped = line.strip()
 
     if line_type == "blank":
@@ -111,12 +99,8 @@ def convert_line(line, line_type, state, config=None):
 
     if line_type == "hide":
         name = stripped.replace("\\\\ hide:", "").strip()
-
-        # if config is available and this character uses side images
-        # skip the hide — Ren'Py handles it automatically ♡
         if config is not None and config.is_side_image(name):
             return ""
-
         return f"hide {name}"
 
     if line_type == "clear":
@@ -124,7 +108,7 @@ def convert_line(line, line_type, state, config=None):
 
     if line_type == "break":
         return "scene black with Dissolve(1.0)\npause 0.5"
-    
+
     if line_type == "label":
         name = stripped.replace("\\\\ label:", "").strip()
         return f"label {name}:"
@@ -136,11 +120,19 @@ def convert_line(line, line_type, state, config=None):
     if line_type == "call":
         name = stripped.replace("\\\\ call:", "").strip()
         return f"call {name}"
-        
+    
+    if line_type == "screen":
+        name = stripped.replace("\\\\ screen:", "").strip()
+        return f"show screen {name}"
 
+    if line_type == "hidescreen":
+        name = stripped.replace("\\\\ hidescreen:", "").strip()
+        return f"hide screen {name}"
+    
+    
+    
+    
     if line_type == "py":
-        # \\ py: pass through as raw python/renpy command
-        # e.g. \\ py: renpy.scene()  →  $ renpy.scene()
         command = stripped.replace("\\\\ py:", "").strip()
         return f"$ {command}"
 
@@ -151,33 +143,38 @@ def convert_line(line, line_type, state, config=None):
         state_name = rest[0]
         position = rest[1] if len(rest) > 1 else state["positions"].get(char_id, "center")
         state["positions"][char_id] = position
-
-        # check if there's a transition specified (t_ prefix)
         transition = "t_default"
         if len(rest) > 2 and rest[2].startswith("t_"):
             transition = rest[2]
-
         return f"show {char_id}_{state_name} at {position} with {transition}"
 
     if line_type == "dialogue":
         return stripped
 
+    if line_type == "unattributed":
+        # Pass through unchanged in both modes.
+        # In ADV mode renders via adv_narrator character defined in game.
+        # In NVL mode renders as unattributed speech in the NVL window.
+        return f'adv_narrator {stripped}'
+
     if line_type == "narrator":
-        if state["mode"] == "nvl":
-            return f'narrator "{stripped}"'
-        else:
-            return f'"{stripped}"'
+        # NVL: handled by the buffer in format_script — this branch
+        # is only reached if called directly outside format_script.
+        # ADV: short stage direction, one line at a time.
+        return f'narrator "{stripped}"'
 
     return ""
 
 
 def format_script(input_path, output_path, config=None):
     """
-    Reads a .ceras or .md script file with \\\\ notation
-    and outputs a .rpy Ren'Py script file.
+    Converts a .ceras or .md Cera Script file to .rpy Ren'Py output.
 
-    config — optional Config object. If provided, side image
-    characters will not generate hide calls.
+    Every narrator line is its own narrator call — line breaks in the
+    source file directly control pacing. The writer decides where to
+    break by where they put line breaks.
+
+    Unattributed speech passes through unchanged in both modes.
     """
     state = {
         "mode": "nvl",
@@ -201,3 +198,4 @@ def format_script(input_path, output_path, config=None):
         f.write("\n".join(output_lines))
 
     print(f"~ cerabellum ~ formatted: {output_path}")
+

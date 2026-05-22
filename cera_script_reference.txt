@@ -44,7 +44,7 @@ SCRIPT STRUCTURE
 \\ label: name            define a Ren'Py label
 \\ jump: name             jump to a label
 \\ call: name             call a label (returns after)
-
+\\ screen: name             shows a screen 
 PYTHON / REN'PY PASSTHROUGH
 ────────────────────────────
 \\ py: command            inject raw Ren'Py / Python
@@ -63,7 +63,7 @@ COMMENTS
 DIALOGUE
 ─────────
 l "text"                  attributed dialogue — shorthand then quoted text
-"text"                    unattributed speech — no speaker label
+"text"                    unattributed speech — no speaker label - adv narration
                           ~ use for c.c. before she is named ~
                           ~ use for voices heard off screen ~
 
