@@ -15,6 +15,12 @@ def classify_line(line):
 
     if stripped == "\\\\ nvl":
         return "nvl"
+
+    if stripped.startswith("\\\\ nvl hide"):
+        return "nvl_hide"
+
+    if stripped.startswith("\\\\ nvl show"):
+        return "nvl_show"
     if stripped == "\\\\ adv":
         return "adv"
 
@@ -76,6 +82,19 @@ def convert_line(line, line_type, state, config=None):
     if line_type == "nvl":
         state["mode"] = "nvl"
         return "nvl clear\nwindow hide"
+    
+    if line_type == "nvl_hide":
+        # check for optional transition parameter
+        parts = stripped.replace("\\\\ nvl hide", "").strip()
+        if parts:
+            return f"nvl hide {parts}"
+        return "nvl hide"
+
+    if line_type == "nvl_show":
+        parts = stripped.replace("\\\\ nvl show", "").strip()
+        if parts:
+            return f"nvl show {parts}"
+        return "nvl show"
 
     if line_type == "adv":
         state["mode"] = "adv"
@@ -141,12 +160,17 @@ def convert_line(line, line_type, state, config=None):
         char_id = parts[0].strip()
         rest = parts[1].strip().split()
         state_name = rest[0]
-        position = rest[1] if len(rest) > 1 else state["positions"].get(char_id, "center")
+
+        # no position specified — state update only
+        # used for side image characters
+        if len(rest) == 1:
+            return f"show {char_id} {state_name}"
+
+        # position specified — full sprite on background
+        position = rest[1]
         state["positions"][char_id] = position
-        transition = "t_default"
-        if len(rest) > 2 and rest[2].startswith("t_"):
-            transition = rest[2]
-        return f"show {char_id}_{state_name} at {position} with {transition}"
+        transition = rest[2] if len(rest) > 2 and rest[2].startswith("t_") else "t_default"
+        return f"show {char_id} {state_name} at {position} with {transition}"
 
     if line_type == "dialogue":
         return stripped
